@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "./dist/binnacle",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

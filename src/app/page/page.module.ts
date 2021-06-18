@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {environment  } from '../../environments/environment';
 import { MapComponent } from './map/map.component';
 import { MainComponent } from './main/main.component';
 import { LocationsComponent } from './locations/locations.component';
@@ -15,6 +15,8 @@ import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { PhotoComponent } from './photo/photo.component';
+import { AlbumComponent } from './album/album.component';
 
 
 
@@ -25,7 +27,8 @@ import { BrowserModule } from '@angular/platform-browser';
       MapComponent,
       MainComponent,
       MapEditComponent,
-
+      PhotoComponent,
+      AlbumComponent
     ],
 
   imports: [
@@ -34,7 +37,7 @@ import { BrowserModule } from '@angular/platform-browser';
     RouterModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDcjR_f0yu0qBIASpx8CL73f8Duhq2bwcs'
+      apiKey: environment.agmapikey
     }),
     ReactiveFormsModule,
     MaterialModule,

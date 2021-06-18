@@ -20,7 +20,7 @@ export class LocationsComponent implements OnInit, AfterViewInit {
   pageEvent: PageEvent;
 
   constructor(private locationsService: LocationsService) { }
-  displayedColumns: string[] = ['datelocation', 'title', 'desc', 'action'];
+  displayedColumns: string[] = ['datelocation', 'title', 'desc', 'action', 'pictures'];
   dataSource = new MatTableDataSource(this.markers);
   @ViewChild('paginator') paginator: MatPaginator;
   ngOnInit(): void {
@@ -29,9 +29,11 @@ export class LocationsComponent implements OnInit, AfterViewInit {
 
       this.markers = markers;
       this.dataSource.data = markers;
+      this.dataSource = new MatTableDataSource(this.markers);
+      this.dataSource.paginator = this.paginator;
+      
       this.load = false;
     });
-
   }
   ngAfterViewInit(): void {
     this.dataSource = new MatTableDataSource(this.markers);

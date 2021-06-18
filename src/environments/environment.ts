@@ -29,7 +29,8 @@ export const environment = {
     enableEmailVerification: true, // default: true
     // tslint:disable-next-line:max-line-length
     useRawUserCredential: true, // If set to true outputs the UserCredential object instead of firebase.User after login and signup - Default: false
-  }
+  },
+  agmapikey: 'AIzaSyDcjR_f0yu0qBIASpx8CL73f8Duhq2bwcs'
 
 };
 

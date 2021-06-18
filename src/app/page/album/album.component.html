@@ -1,0 +1,10 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let url of urls; let i=index">
+        <mat-card class="example-card" (click)="redirectPhoto(i)">
+            <mat-card-header>
+                <a [href]="url">url</a>
+            </mat-card-header>
+            <img mat-card-image [src]="url" alt="">
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -13,13 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MapComponent implements OnInit {
   markers: Marker[] = [];
+  files: File[] = [];
   public lat: number;
   public lng: number;
   id: string;
   constructor(private snackBar: MatSnackBar,
-              public dialog: MatDialog,
-              private locationsService: LocationsService,
-              private route: ActivatedRoute
+    public dialog: MatDialog,
+    private locationsService: LocationsService,
+    private route: ActivatedRoute
   ) {
 
     this.getDirection();
@@ -55,7 +56,7 @@ export class MapComponent implements OnInit {
   editMap(marker: Marker) {
     const dialogRef = this.dialog.open(MapEditComponent, {
       width: '250px',
-      data: { titulo: marker.title, desc: marker.desc, date: marker.datelocation }
+      data: { id: marker.id, titulo: marker.title, desc: marker.desc, date: marker.datelocation, file: this.files }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -65,6 +66,7 @@ export class MapComponent implements OnInit {
       marker.title = result.titulo;
       marker.desc = result.desc;
       marker.datelocation = result.date;
+    
       this.editMarker(marker);
     });
   }

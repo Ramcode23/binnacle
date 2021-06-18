@@ -1,6 +1,6 @@
 
 export class Marker {
-  
+
   public id: string;
   public lat: number;
   public lng: number;
@@ -8,6 +8,7 @@ export class Marker {
   public desc = 'Sin Descripcion';
   public datelocation: string;
   public user: string;
+  public urls: string[];
 
   constructor(lat: number, lng: number) {
     this.lat = lat;
@@ -17,3 +18,9 @@ export class Marker {
   }
 
 }
+
+export class UrlMarker {
+
+  route: string;
+}
+

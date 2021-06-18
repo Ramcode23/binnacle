@@ -14,9 +14,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
 // Import your library
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,9 +46,10 @@ import { environment } from 'src/environments/environment';
     NgxAuthFirebaseUIModule.forRoot(
       environment.firebase,
       () => 'binnacle',
-       environment.ngx
-       ),
-    BrowserAnimationsModule
+      environment.ngx
+    ),
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
   exports: [
     LayoutModule,
@@ -68,7 +69,8 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     NgxAuthFirebaseUIModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatGridListModule
   ]
 })
 export class MaterialModule { }
